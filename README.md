@@ -190,10 +190,10 @@ Private Sub LerProduto(ByVal Numero As Long)
 
     Close #Arquivo
 
-    Debug.Print "Nome: "; Trim$(Produto.Nome)
-    Debug.Print "Código: "; Trim$(Produto.Codigo)
-    Debug.Print "Compra: "; Trim$(Produto.PrecoCompra)
-    Debug.Print "Venda: "; Trim$(Produto.PrecoVenda)
+    Debug.Print "Nome: "; Trim(Produto.Nome)
+    Debug.Print "Código: "; Trim(Produto.Codigo)
+    Debug.Print "Compra: "; Trim(Produto.PrecoCompra)
+    Debug.Print "Venda: "; Trim(Produto.PrecoVenda)
 
 End Sub
 ```
@@ -361,10 +361,10 @@ Private Sub ListarProdutos()
         Get #Arquivo, Numero, Produto
 
         Debug.Print Numero
-        Debug.Print Trim$(Produto.Nome)
-        Debug.Print Trim$(Produto.Codigo)
-        Debug.Print Trim$(Produto.PrecoCompra)
-        Debug.Print Trim$(Produto.PrecoVenda)
+        Debug.Print Trim(Produto.Nome)
+        Debug.Print Trim(Produto.Codigo)
+        Debug.Print Trim(Produto.PrecoCompra)
+        Debug.Print Trim(Produto.PrecoVenda)
 
     Next Numero
 
@@ -553,17 +553,17 @@ Private Sub Form_Load()
 
     Close #Arquivo
 
-    Debug.Print "Nome: " & Trim$(Produto.Nome)
-    Debug.Print "Código: " & Trim$(Produto.Codigo)
-    Debug.Print "Preço de compra: " & Trim$(Produto.PrecoCompra)
-    Debug.Print "Preço de venda: " & Trim$(Produto.PrecoVenda)
+    Debug.Print "Nome: " & Trim(Produto.Nome)
+    Debug.Print "Código: " & Trim(Produto.Codigo)
+    Debug.Print "Preço de compra: " & Trim(Produto.PrecoCompra)
+    Debug.Print "Preço de venda: " & Trim(Produto.PrecoVenda)
 
 End Sub
 ```
 
 ---
 
-# 13. Atenção ao `Trim$`
+# 13. Atenção ao `Trim`
 
 Como estamos utilizando campos de tamanho fixo:
 
@@ -588,15 +588,15 @@ CHAPARIA            |
 Por isso, quando queremos exibir o conteúdo sem os espaços adicionais, utilizamos:
 
 ```vb
-Trim$(Produto.Nome)
+Trim(Produto.Nome)
 ```
 
-O `Trim$` remove os espaços do início e do final da string.
+O `Trim` remove os espaços do início e do final da string.
 
 Exemplo:
 
 ```vb
-Debug.Print Trim$(Produto.Nome)
+Debug.Print Trim(Produto.Nome)
 ```
 
 em vez de:
@@ -834,7 +834,7 @@ Consequentemente, o programa consegue determinar diretamente onde está determin
 | `Put` | Grava um registro |
 | `LOF` | Informa o tamanho do arquivo |
 | `Close` | Fecha o arquivo |
-| `Trim$` | Remove espaços das extremidades |
+| `Trim` | Remove espaços das extremidades |
 
 ---
 
